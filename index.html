@@ -1,0 +1,239 @@
+<html>
+<head>
+  <title>Real Time Image Identification App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body background = "background.jpg">
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Rubik's 3x3</b>
+            <img src="3x3.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Magic Cube
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Carton
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Teddy Bear</b>
+            <img src="bear.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Stuffed Bear
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Violin, Cello
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Toy Car </b>
+            <img src="car.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Opel Frogster Toy Car
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Mouse, Computer mouse
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Tower Fan</b>
+            <img src="fan.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Tower fan, Speaker
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Wardrobe, Closet, Press
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Elmers Glue Stick</b>
+            <img src="glue.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Elmers Glue Stick
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Lighter, Light, Igniter
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Trosien Orthodontics Hand Sanitizer</b>
+            <img src="han san.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Small Hand Sanitizer Bottle
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Hair spray
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Hanger</b>
+            <img src="hanger.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Hanger, cookie cutter, clips
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Microphone, Mike
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Wolverine Figure </b>
+            <img src="man.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Wolverine, Wolverine figure
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Unicycle, Monocycle
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Scotch Magic Tape</b>
+            <img src="smoltape.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - 3m Color Magic Tape
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Hook, Claw
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<ol>
+    <div class="test_image_and_result col-xs-12">
+        <li class="col-sm-4 col-xs-12">
+            <b>Test Image - Blue Painter's Tape</b>
+            <img src="tape.jpg" class="img-responsive">
+        </li>
+        <h5 class="col-sm-4 col-xs-12">
+            Output on <b>Google Lens</b> - Masking tape
+            <span> </span>
+        </h5>
+         <h5 class="col-sm-4 col-xs-12">
+            Output on <b>MobileNet</b> - Toilet Seat
+            <span> </span>
+        </h5>
+        <div class="mini_result col-xs-12">
+            <h4>Result - Google is more accurate</h4>
+            <hr>
+            <h4></h4>
+        </div> 
+    </div>
+    <br>
+</ol>
+<script src="main.js"></script>
+</body>
+
+</html>
+
